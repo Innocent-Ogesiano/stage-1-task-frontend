@@ -1,29 +1,36 @@
-const d = new Date();
-let day = d.getDay();
+// Calling showTime function at every second
+setInterval(showTime, 1000);
 
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// Defining showTime funcion
+function showTime() {
+	// Getting current time and date
+	let d = new Date();
 
-let today = days[day];
-let hour = d.getHours();
-let minutes = d.getMinutes();
-let seconds = d.getSeconds();
-let milliseconds = d.getMilliseconds();
+    let day = d.getDay();
 
-let time = `${hour}:${minutes}:${seconds}:${milliseconds}`;
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-console.log(`Today is: ${today}`);
-console.log(`Current time is: ${time}`);
-let currentDayElement = document.getElementById("currentDayOfTheWeek");
-currentDayElement.innerHTML = today;
+    let today = days[day];
+    let currentDayElement = document.getElementById("currentDayOfTheWeek");
+    currentDayElement.innerHTML = today;
 
-let cuurentUTCHour = d.getUTCHours();
-let currentUTCMinutes = d.getUTCMinutes();
-let currentUTCSeconds = d.getUTCSeconds();
-let currentUTCMilliseconds = d.getUTCMilliseconds();
+    let cuurentUTCHour = d.getUTCHours();
+    let currentUTCMinutes = d.getUTCMinutes();
+    let currentUTCSeconds = d.getUTCSeconds();
+    let currentUTCMilliseconds = d.getUTCMilliseconds();
 
-let utcTime = `${cuurentUTCHour}:${currentUTCMinutes}:${currentUTCSeconds}:${currentUTCMilliseconds}`;
+	cuurentUTCHour = cuurentUTCHour < 10 ? "0" + cuurentUTCHour : cuurentUTCHour;
+	currentUTCMinutes = currentUTCMinutes < 10 ? "0" + currentUTCMinutes : currentUTCMinutes;
+	currentUTCSeconds = currentUTCSeconds < 10 ? "0" + currentUTCSeconds : currentUTCSeconds;
+    currentUTCMilliseconds = currentUTCMilliseconds < 10 ? "0" + currentUTCMilliseconds : currentUTCMilliseconds;
 
-console.log(`Current UTC time is: ${utcTime}`);
+    let utcTime = `${cuurentUTCHour}:${currentUTCMinutes}:${currentUTCSeconds}:${currentUTCMilliseconds}`;
 
-let currentUtcTimeElement = document.getElementById("currentUTCTime");
-currentUtcTimeElement.innerHTML = utcTime;
+	// Displaying the time
+	document.getElementById(
+		"currentUTCTime"
+	).innerHTML = utcTime;
+}
+
+showTime();
+
