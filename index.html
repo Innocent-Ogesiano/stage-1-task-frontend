@@ -6,24 +6,40 @@
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
-
-        <h1>Home</h1>
-        <p>Home page content goes here.</p>
-        <label for="slack-name">Slack Name:</label>
-        <input type="text" id="slack-name" name="slack-name" value="Innocent Ekweogu">
-        <br>
-        <label for="slack-image">Slack Profile Picture:</label>
-        <br>
-        <img src="images/WhatsApp Image 2023-09-10 at 10.53.44.jpg" alt="Innocent Ekweogu">
-        <br>
-        <label for="currentDayOfTheWeek">Current Day Of The Week:</label>
-        <div id="currentDayOfTheWeek"></div>
-        <br>
-        <label for="currentUTCTime">Current UTC Time:</label>
-        <div id="currentUTCTime"></div>
-        <br>
-        <label for="track">Track:</label>
-        <div id="track"><span>Frontend</span></div>
+        <section class="personal-details">
+            <h2 style="align-content: center;">My Details</h2>
+            <div class="personal-details-container">
+                <div class="personal-details-container_left" style="width: 50%;">
+                    <img src="images/WhatsApp Image 2023-09-10 at 10.53.44.jpg" alt="Innocent Ekweogu" data-testid="slackDisplayImage">
+                </div>
+                <div class="personal-details-container_right" style="width: 50%;">
+                    <div class="name">
+                        <label for="slackUserName" style="margin-bottom: 50px;"><b>Slack Username:</b></label>
+                        <span data-testid="slackUserName">Innocent Ekweogu</span>
+                    </div>
+                    <div class="name">
+                        <label for="currentDayOfTheWeek"><b>Current Day Of The Week:</b></label>
+                        <span id="currentDayOfTheWeek" data-testid="currentDayOfTheWeek"></span>
+                    </div>
+                    <div class="name">
+                        <label for="currentUTCTime"><b>Current UTC Time:</b></label>
+                        <span id="currentUTCTime" data-testid="currentUTCTime"></span>
+                    </div>
+                    <div class="name">
+                        <label for="track"><b>Track:</b></label>
+                        <span data-testid="myTrack">Frontend</span>
+                    </div>
+                    <div class="name">
+                        <label for="github_link"><b>GitHub URL:</b></label>
+                        <span id="github_link">
+                            <a href="https://github.com/Innocent-Ogesiano/stage-1-task-frontend.git" data-testid=“githubURL”>
+                                GitHub Link
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
     <script src="js/index.js"></script>
 </html>
